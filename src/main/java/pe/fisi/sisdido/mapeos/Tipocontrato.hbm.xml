@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-ene-2017 14:56:19 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.dao.Tipocontrato" table="tipocontrato" catalog="loginpruebas" optimistic-lock="version">
+        <id name="codContrato" type="int">
+            <column name="codContrato" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreContrato" type="string">
+            <column name="nombreContrato" length="45" />
+        </property>
+        <property name="cantHoras" type="java.lang.Integer">
+            <column name="cantHoras" />
+        </property>
+        <set name="docentes" table="docente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tipoContrato" not-null="true" />
+            </key>
+            <one-to-many class="pe.dao.Docente" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-ene-2017 14:56:19 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.dao.CursoHasDocente" table="curso_has_docente" catalog="loginpruebas" optimistic-lock="version">
+        <composite-id name="id" class="pe.dao.CursoHasDocenteId">
+            <key-property name="cursoIdCurso" type="int">
+                <column name="Curso_idCurso" />
+            </key-property>
+            <key-property name="cursoEscuelaIdEscuela" type="int">
+                <column name="Curso_Escuela_idEscuela" />
+            </key-property>
+            <key-property name="docenteIdDocente" type="string">
+                <column name="Docente_idDocente" length="20" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="curso" class="pe.dao.Curso" update="false" insert="false" fetch="select">
+            <column name="Curso_idCurso" not-null="true" />
+        </many-to-one>
+        <many-to-one name="docente" class="pe.dao.Docente" update="false" insert="false" fetch="select">
+            <column name="Docente_idDocente" length="20" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
