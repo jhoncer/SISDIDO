@@ -9,11 +9,11 @@
     <property name="hibernate.connection.password">admin</property>
     
     <property name="show_sql">true</property>
-    
+    <mapping class="pe.fisi.sisdido.model.Docente"/>
+<!--         <mapping resource="pe/fisi/sisdido/mapeos/Docente.hbm.xml"/> -->
 <!--     <mapping resource="pe/dao/Tipocontrato.hbm.xml"/> -->
 <!--     <mapping resource="pe/dao/Curso.hbm.xml"/> -->
 <!--     <mapping resource="pe/dao/Escuela.hbm.xml"/> -->
-    <mapping resource="pe/fisi/sisdido/mapeos/Docente.hbm.xml"/>
 <!--     <mapping resource="pe/dao/Disponibilidad.hbm.xml"/> -->
 <!--     <mapping resource="pe/dao/CursoHasDocente.hbm.xml"/> -->
   </session-factory>

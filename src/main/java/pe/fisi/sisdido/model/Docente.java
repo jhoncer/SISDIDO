@@ -1,16 +1,32 @@
 package pe.fisi.sisdido.model;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-
+@Entity
+@Table(name="loginPruebas.docente")
 public class Docente  implements java.io.Serializable {
 
-
+	@Id
+	@Column(name="idDocente" ,length=20)
      private String idDocente;
-     private int tipocontrato;
-     private String nombreDocente;
-     private String correo;
+     
+	@Column(name="tipocontrato")
+	private int tipocontrato;
+	
+	@Column(name="nombreDocente")
+    private String nombreDocente;
+     
+	@Column(name="correo")
+	private String correo;
+	
+	@Column(name="telefono",length=9)
      private String telefono;
+	
+	@Column(name="clave",length=20)
      private String clave;
 
 
